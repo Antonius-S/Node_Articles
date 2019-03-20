@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+'use strict';
+
+/**
+  Copy of mocha/bin/_mocha to ensure debugging mocha tests in VS Code with mocha globally installed.
+  Directory of global mocha is determined as %Node%/node_modules/mocha
+ */
+
+const path = require('path');
+const nodeDir = path.dirname(process.execPath); // process.execPath is path to Node binary
+
+require(path.join(nodeDir, 'node_modules/mocha/lib/cli')).main();
