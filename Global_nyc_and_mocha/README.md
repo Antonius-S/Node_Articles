@@ -4,7 +4,7 @@ Make globally installed `nyc` and `mocha` work together
 **Problem**: when `nyc` and `mocha` both installed globally, `nyc` produces zero coverage info.
 Ref: https://github.com/istanbuljs/nyc/issues/1029
 
-*Issue seems to be Windows-only*
+:warning: *Issue seems to be Windows-only*
 
 Here is minimal solution.
 
@@ -48,3 +48,5 @@ Add following launch configuration to `launch.json` (either global or repo-local
 	}
 ```
 *Adjust labels, mocha args and other properties as you like*
+
+:information_source: *Some notes*. The script just clones `_mocha` adding a determination of Node path. Though it is marked deprecated, running `mocha` brought no luck (app was launched but without breakpoints and regular test suite output). I don't know why and don't care much.
